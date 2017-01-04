@@ -1,0 +1,20 @@
+{
+  "name": "p2p-lambda",
+  "version": "0.1.0",
+  "description": "Remote code execution P2P",
+  "main": "index.js",
+  "repository": "git@github.com:JGAntunes/p2p-lambda.git",
+  "author": "(JGAntunes <me@jgantunes.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bufsp": "^1.0.3",
+    "kad": "^1.6.4",
+    "level": "^1.5.0",
+    "uuid": "^3.0.1",
+    "vorpal": "^1.11.4"
+  },
+  "devDependencies": {
+    "snazzy": "^5.0.0",
+    "standard": "^8.6.0"
+  }
+}
