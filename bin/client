@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const config = require('../config')
+const Client = require('../lib/client')
+
+const client = Client(config.ipc)
+
+client.start((err) => {
+  if (err) throw err
+})

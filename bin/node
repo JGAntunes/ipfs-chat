@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const config = require('../config')
+const Node = require('../lib/node')
+const storage = require('../lib/storage')
+
+config.storage = storage
+
+const node = Node(config)
+
+node.connect()
