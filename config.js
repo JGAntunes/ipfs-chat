@@ -5,7 +5,7 @@ const config = {
     address: process.env.KAD_CHAT_DHT_ADDRESS || 'localhost',
     port: parseInt(process.env.KAD_CHAT_DHT_PORT) || 3333
   },
-  chat: {
+  connections: {
     address: process.env.KAD_CHAT_CHAT_ADDRESS || 'localhost',
     port: parseInt(process.env.KAD_CHAT_CHAT_PORT) || 4004
   },
@@ -17,12 +17,18 @@ const config = {
     socket: process.env.KAD_CHAT_IPC_SOCKET || '/tmp/test.sock'
   },
   storage: {
-    location: process.env.KAD_CHAT_STORAGE_LOCATION || './tmp/kad_chat_dht'
+    location: process.env.KAD_CHAT_STORAGE_LOCATION || './.tmp/kad_chat_dht'
   },
   keys: {
-    private: fs.readFileSync(process.env.KAD_CHAT_PRIVATE_KEY || './keys/private.pem', {encoding: 'utf-8'}),
-    public: fs.readFileSync(process.env.KAD_CHAT_PUBLIC_KEY || './keys/public.pem', {encoding: 'utf-8'})
+    path: process.env.KAD_CHAT_KEY_PATH || './.keys'
   }
+}
+
+if (fs.existsSync(`${config.keys.path}/public.pem`) && fs.existsSync(`${config.keys.path}/private.pem`)) {
+  config.keys.public = fs.readFileSync(`${config.keys.path}/public.pem`, {encoding: 'utf8'})
+  config.keys.private = fs.readFileSync(`${config.keys.path}/private.pem`, {encoding: 'utf8'})
+} else {
+  throw new Error(`Please set your PEM encoded keys under ${config.keys.path}`)
 }
 
 module.exports = config

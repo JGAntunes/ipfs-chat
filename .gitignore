@@ -38,3 +38,4 @@ jspm_packages
 
 # Kad chat tmp files
 .tmp
+.keys
