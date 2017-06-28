@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 const config = {
   dht: {
     address: process.env.KAD_CHAT_DHT_ADDRESS || 'localhost',
@@ -18,17 +16,7 @@ const config = {
   },
   storage: {
     location: process.env.KAD_CHAT_STORAGE_LOCATION || './.tmp/kad_chat_dht'
-  },
-  keys: {
-    path: process.env.KAD_CHAT_KEY_PATH || './.keys'
   }
-}
-
-if (fs.existsSync(`${config.keys.path}/public.pem`) && fs.existsSync(`${config.keys.path}/private.pem`)) {
-  config.keys.public = fs.readFileSync(`${config.keys.path}/public.pem`, {encoding: 'utf8'})
-  config.keys.private = fs.readFileSync(`${config.keys.path}/private.pem`, {encoding: 'utf8'})
-} else {
-  throw new Error(`Please set your PEM encoded keys under ${config.keys.path}`)
 }
 
 module.exports = config
