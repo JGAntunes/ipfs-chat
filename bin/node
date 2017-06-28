@@ -2,9 +2,9 @@
 
 const config = require('../config')
 const Node = require('../lib/node')
-const Storage = require('../lib/storage')
+// const Storage = require('../lib/storage')
 
-config.storage = Storage(config.storage.location)
+// config.storage = Storage(config.storage.location)
 
 const node = Node(config)
 
