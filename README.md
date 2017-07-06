@@ -1,2 +1,2 @@
-# p2p-kad-chat
-Simple p2p chat app based on kademlia
+# p2p-chat
+Simple p2p chat cli app based on ipfs

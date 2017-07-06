@@ -1,9 +1,9 @@
 {
-  "name": "p2p-kad-chat",
+  "name": "p2p-chat",
   "version": "0.1.0",
-  "description": "P2P chat based on kadmelia and utp",
+  "description": "Cli P2P chat based on IPFS",
   "main": "./bin/node",
-  "repository": "git@github.com:JGAntunes/p2p-kad-chat.git",
+  "repository": "git@github.com:JGAntunes/p2p-chat.git",
   "author": "(JGAntunes <me@jgantunes.com>",
   "license": "MIT",
   "scripts": {
@@ -13,7 +13,6 @@
   "dependencies": {
     "bufsp": "^1.0.3",
     "ipfs": "^0.24.1",
-    "utp": "0.0.9",
     "uuid": "^3.0.1",
     "vorpal": "^1.11.4"
   },
