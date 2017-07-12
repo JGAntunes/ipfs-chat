@@ -1,5 +1,5 @@
 {
-  "name": "p2p-chat",
+  "name": "ipfs-chat",
   "version": "0.1.0",
   "description": "Cli P2P chat based on IPFS",
   "main": "./bin/node",
@@ -7,6 +7,8 @@
   "author": "(JGAntunes <me@jgantunes.com>",
   "license": "MIT",
   "scripts": {
+    "node": "./bin/node",
+    "client": "./bin/client",
     "lint": "standard | snazzy",
     "lintfix": "standard --fix"
   },
